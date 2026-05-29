@@ -1,25 +1,23 @@
+# app.py
+import os
+
+def add(a, b):
+    return a + b
+
 def divide(a, b):
-    return a / b  # bug: no zero division check
+    return a / b  # Bug: no check for division by zero
 
-
-def get_user(users, index):
-    return users[index]  # bug: no index validation
-
+def get_password():
+    password = "admin123"  # Vulnerability: hardcoded password
+    return password
 
 def unused_function():
-    x = 10  # code smell (unused variable)
-    return
+    x = 10  # Code smell: unused variable
+    pass
 
-
-password = "123456"  # security issue: hardcoded secret
-
-
-def main():
-    users = ["Ali", "Omar", "Sara"]
-
-    print(divide(10, 0))  # will crash
-    print(get_user(users, 10))  # index error
-
-
-if __name__ == "__main__":
-    main()
+def duplicate_block():
+    print("hello")
+    print("hello")
+    print("hello")
+    print("hello")
+    print("hello")  # Code smell: duplication
